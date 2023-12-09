@@ -6,7 +6,7 @@ import java.util.List;
 
 public class ClienteDAO {
 	
-	private static List<Cliente> clientes = new ArrayList<>(); //La lista es est�tica para que no se creen mas listas.
+	private static List<Cliente> clientes = new ArrayList<>(); //La lista es estática para que no se creen mas listas.
 	
 	public void save(Cliente c) {
 		clientes.add(c);

@@ -13,8 +13,8 @@ public class Start {
 	static ClienteDAO daoCliente = new ClienteDAO(); //Objeto de tipo ClienteDAO.
 	static AutomovilDAO daoAutomovil = new AutomovilDAO(); //Objeto de tipo AutomovilDAO.
 	static Scanner sc = new Scanner(System.in);
-	static String compruebaLetras[] = {"A", "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "�", "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"};
-	static String compruebaNumeros[] = {"0","1","2","3","4","5","6","7","8","9"}; //validar como lenngth-1 , -2, -3 (el -1 es la ultima posicion)
+	static String compruebaLetras[] = {"A", "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "Ñ", "O" "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"};
+	static String compruebaNumeros[] = {"0","1","2","3","4","5","6","7","8","9"}; //validar como lenngth -1 , -2, -3 (el -1 es la ultima posicion).
 	static String compruebaRut[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "k"};
 	static String patente;
 	static int kilometraje;
@@ -28,7 +28,7 @@ public class Start {
 	static String stringTelefono;
 	static int telefono;
 
-	//Menu de navegaci�n.
+	//Menu de navegación.
 	public static boolean menu() { 
 		boolean continuar = true;
 		System.out.println("1. Registrar Automovil");
@@ -63,10 +63,10 @@ public class Start {
 		return continuar;
 	}
 		
-	//Proceso de ingreso y validaci�n de datos.
+	//Proceso de ingreso y validación de datos.
 	public static void registrarAutomovil() {
 			
-		//Pide ingresar la patente del automovil (Tambi�n es validado el ingreso de datos).
+		//Pide ingresar la patente del automovil (También es validado el ingreso de datos).
 		int contador = 0;
 		do {
 			
@@ -93,7 +93,7 @@ public class Start {
 				}
 			}
 			
-			//Se valida el quinto caracter sea un gui�n.
+			//Se valida el quinto caracter sea un guión.
 			if ("-".equals(Character.toString(patente.charAt(4)))){
 				contador++;
 			}
@@ -113,7 +113,7 @@ public class Start {
 			
 		} while (contador != 7);
 		
-		//Pide ingresar el kilometraje del automovil (Tambi�n es validado el ingreso de datos).
+		//Pide ingresar el kilometraje del automovil (También es validado el ingreso de datos).
 		do {
 			
 			try {
@@ -130,11 +130,11 @@ public class Start {
 			
 		} while (kilometraje<0);
 
-		//Pide ingresar la revisi�n t�cnica del automovil (Tambi�n es validado el ingreso de datos).
+		//Pide ingresar la revisión técnica del automovil (También es validado el ingreso de datos).
 		String respuestaRevision;
 		boolean respondido = false;
 		do {
-			System.out.println("�la revisi�n t�cnica del automovil est� al d�a? (Si/No)");
+			System.out.println("¿la revisión técnica del automovil está al día? (Si/No)");
 			respuestaRevision = sc.nextLine().trim();
 				
 			if (respuestaRevision.equalsIgnoreCase("Si")) {
@@ -147,7 +147,7 @@ public class Start {
 			}
 		} while (respondido != true);
 		
-		//Pide ingresar la marca del autom�vil (Tambi�n es validado el ingreso de datos).
+		//Pide ingresar la marca del automóvil (También es validado el ingreso de datos).
 		while (salirMenuMarca == false) {
 			System.out.println("Seleccione una marca");
 			System.out.println("1. Chevrolet");
@@ -172,7 +172,7 @@ public class Start {
 				salirMenuMarca = true;
 				break;
 			default:
-				System.out.println("Usted Eligi� una opci�n no valida, eliga nuevamente");
+				System.out.println("Usted Eligió una opción no valida, eliga nuevamente");
 				salirMenuMarca = false;
 			}
 		}
@@ -190,7 +190,7 @@ public class Start {
 		contador = 0;
 		while (clienteSeleccionado == -1) {
 			try {
-				System.out.println("Seleccione el due�o del automovil");
+				System.out.println("Seleccione el dueño del automovil");
 				
 				for (Cliente c : clientes) {
 					contador++;
@@ -208,7 +208,7 @@ public class Start {
 			}
 		}	
 			
-		//Creaci�n del objeto.
+		//Creación del objeto.
 		Automovil automovil = new Automovil();
 		automovil.setPatente(patente);
 		automovil.setKilometraje(kilometraje);
@@ -222,26 +222,26 @@ public class Start {
 			
 	public static void registroDeCliente() {
 		
-		//Ingreso de del nombre del cliente y validaci�n de datos.
+		//Ingreso de del nombre del cliente y validación de datos.
 		do {
 			System.out.println("Ingrese el nombre del cliente");
 			nombre = sc.nextLine().trim();
 			if (nombre.length() < 10) {
-				System.out.println("El nommbre debe contener como m�nimo 10 caracteres, ingrese el nombre nuevamente");
+				System.out.println("El nommbre debe contener como mínimo 10 caracteres, ingrese el nombre nuevamente");
 			}
 		} while (nombre.length() < 10);
 		
-		//Ingreso de del apellido del cliente y validaci�n de datos.
+		//Ingreso de del apellido del cliente y validación de datos.
 		do {
 			System.out.println("Ingrese el apellido del cliente");
 			apellido = sc.nextLine().trim();
 			if (apellido.length() < 10) {
-				System.out.println("El apellido debe contener como m�nimo 10 caracteres, ingrese el apellido nuevamente");
+				System.out.println("El apellido debe contener como mínimo 10 caracteres, ingrese el apellido nuevamente");
 			}
 		} while (apellido.length() < 10);
 		
 		
-		//Ingreso de del rut del cliente y validaci�n de datos.
+		//Ingreso de del rut del cliente y validación de datos.
 		boolean seguir = false;
 		do {
 			
@@ -256,14 +256,14 @@ public class Start {
 			}
 					
 			if (rut.length() == 9) {
-				if ("-".equals(Character.toString(rut.charAt(7))) == true) { //Si el rut tiene 7 digitos, se comprueba que todos sean n�meros mediante una excepci�n.
+				if ("-".equals(Character.toString(rut.charAt(7))) == true) { //Si el rut tiene 7 digitos, se comprueba que todos sean números mediante una excepción.
 					
 					try {
-						cadenaRut = rut.substring(0, 7); //En esta instrucci�n se almacenan los primeros 7 digitos.
-						rutInt = Integer.parseInt(cadenaRut); //En esta instrucci�n se convierten los n�meros almacenados en la variable RutInt y se almacenan en una variable de tipo int (Si el programa no captura un error es porque todos los digitos eran n�meros).
+						cadenaRut = rut.substring(0, 7); //En esta instrucción se almacenan los primeros 7 digitos.
+						rutInt = Integer.parseInt(cadenaRut); //En esta instrucción se convierten los números almacenados en la variable RutInt y se almacenan en una variable de tipo int (Si el programa no captura un error es porque todos los digitos eran números).
 						
 						for (int j = 0; j < compruebaRut.length; j++) {
-							if (compruebaRut[j].equalsIgnoreCase(Character.toString(rut.charAt(8)))) { //En esta instrucci�n se comprueba que el ultimo digito del rut sea correcto.
+							if (compruebaRut[j].equalsIgnoreCase(Character.toString(rut.charAt(8)))) { //En esta instrucción se comprueba que el ultimo digito del rut sea correcto.
 								seguir = true;
 								break;
 							}
@@ -279,14 +279,14 @@ public class Start {
 			}
 			
 			if (rut.length() == 10){
-				if ("-".equals(Character.toString(rut.charAt(8))) == true) { //Si el rut tiene 8 digitos, se comprueba que todos sean n�meros mediante una excepci�n.
+				if ("-".equals(Character.toString(rut.charAt(8))) == true) { //Si el rut tiene 8 digitos, se comprueba que todos sean números mediante una excepción.
 					
 					try {
-						cadenaRut = rut.substring(0, 8); //En esta instrucci�n se almacenan los primeros 8 digitos.
-						rutInt = Integer.parseInt(cadenaRut); //En esta instrucci�n se convierten los n�meros almacenados en la variable RutInt y se almacenan en una variable de tipo int (Si el programa no captura un error es porque todos los digitos eran n�meros).
+						cadenaRut = rut.substring(0, 8); //En esta instrucción se almacenan los primeros 8 digitos.
+						rutInt = Integer.parseInt(cadenaRut); //En esta instrucción se convierten los números almacenados en la variable RutInt y se almacenan en una variable de tipo int (Si el programa no captura un error es porque todos los digitos eran números).
 						
 						for (int j = 0; j < compruebaRut.length; j++) {
-							if (compruebaRut[j].equalsIgnoreCase(Character.toString(rut.charAt(9)))) { //En esta instrucci�n se comprueba que el ultimo digito del rut sea correcto.
+							if (compruebaRut[j].equalsIgnoreCase(Character.toString(rut.charAt(9)))) { //En esta instrucción se comprueba que el ultimo digito del rut sea correcto.
 								seguir = true;
 								break;
 							}
@@ -303,7 +303,7 @@ public class Start {
 			
 		} while (seguir == false);
 		
-		//Ingreso de del telefono del cliente y validaci�n de datos (Se validan los datos mediante la captura de una excepci�n).
+		//Ingreso de del telefono del cliente y validación de datos (Se validan los datos mediante la captura de una excepción).
 		boolean validado = false;
 		do {
 			
@@ -313,18 +313,18 @@ public class Start {
 				stringTelefono = sc.nextLine().trim();
 				
 				if (stringTelefono.length() < 9) {
-					System.out.println("El n�mero que ingresaste tiene menos de 9 d�gitos, ingresalo nuevamente");
+					System.out.println("El número que ingresaste tiene menos de 9 dígitos, ingresalo nuevamente");
 				}
 				
 				if (stringTelefono.length() > 10) {
-					System.out.println("El n�mero que ingresaste tiene m�s de 10 d�gitos, ingresalo nuevamente");
+					System.out.println("El número que ingresaste tiene más de 10 dígitos, ingresalo nuevamente");
 				}
 				
 			} while (stringTelefono.length() != 10 && stringTelefono.length() != 9);
 			
 			try {
 				telefono = Integer.parseInt(stringTelefono); //Si el programa se cae es porque no pudo convertir el tipo de dato (El usuario ingreso caracteres, los cuales no se pueden almacenar en una variable de tipo int).
-				validado = true; //Si el programa no se cae se lee esta l�nea.
+				validado = true; //Si el programa no se cae se lee esta línea.
 			} catch (Exception ex) {
 				telefono = 0;
 				System.out.println("El numero que ingresaste contiene caracteres, ingresalo nuevamente");
@@ -332,24 +332,24 @@ public class Start {
 			
 		} while (validado == false); //Repite mientras la variable se falsa.
 		
-		//Creaci�n del objeto.
+		//Creación del objeto.
 		Cliente Cliente = new Cliente();
 		Cliente.setNombre(nombre);
 		Cliente.setApellido(apellido);
 		Cliente.setRut(rut);
 		Cliente.setTelefono(telefono);
 		
-		daoCliente.save(Cliente); //En esta instrucci�n se almacena el objeto anteriormente creado en la lista.
+		daoCliente.save(Cliente); //En esta instrucción se almacena el objeto anteriormente creado en la lista.
 		
 	}
 		
 	public static void mostrarAutomoviles() {
-		daoAutomovil.getAll().forEach(System.out::println); //Esta instrucci�n imprime la lista que almacena objetos de tipo Automovil.
+		daoAutomovil.getAll().forEach(System.out::println); //Esta instrucción imprime la lista que almacena objetos de tipo Automovil.
 	}
 		
 	public static void mostrarClientes() {
 		
-		daoCliente.getAll().forEach(System.out::println); //Esta instrucci�n imprime la lista que almacena objetos de tipo Cliente.
+		daoCliente.getAll().forEach(System.out::println); //Esta instrucción imprime la lista que almacena objetos de tipo Cliente.
 		
 	}
 		

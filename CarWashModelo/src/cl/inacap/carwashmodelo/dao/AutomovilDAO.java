@@ -6,7 +6,7 @@ import java.util.List;
 import cl.inacap.carwashmodelo.dto.Automovil;
 
 public class AutomovilDAO {
-	private static List<Automovil> automoviles = new ArrayList<>(); //La lista es est�tica para que no se creen mas listas.
+	private static List<Automovil> automoviles = new ArrayList<>(); //La lista es estática para que no se creen mas listas.
 	
 	public void save(Automovil a) {
 		automoviles.add(a);

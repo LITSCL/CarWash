@@ -57,6 +57,6 @@ public class Automovil {
 	}
 	
 	public String toString() {
-		return "Patente: " + this.patente + " Kilometraje: " + this.kilometraje + " Revisión Técnica: " + this.revisionTecnica + " Marca: " + this.marca + " Modelo: " + this.modelo + " Cliente: " + this.clienteFK;
+		return "Patente: " + this.patente + " Kilometraje: " + this.kilometraje + " RevisiÃ³n TÃ©cnica: " + this.revisionTecnica + " Marca: " + this.marca + " Modelo: " + this.modelo + " Cliente: " + this.clienteFK;
 	}
 }
