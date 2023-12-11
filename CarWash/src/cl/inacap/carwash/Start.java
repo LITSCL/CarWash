@@ -14,7 +14,7 @@ public class Start {
 	static AutomovilDAO daoAutomovil = new AutomovilDAO(); //Objeto de tipo AutomovilDAO.
 	static Scanner sc = new Scanner(System.in);
 	static String compruebaLetras[] = {"A", "B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "Ñ", "O" "P", "Q", "R", "S", "T", "V", "W", "X", "Y", "Z"};
-	static String compruebaNumeros[] = {"0","1","2","3","4","5","6","7","8","9"}; //validar como lenngth -1 , -2, -3 (el -1 es la ultima posicion).
+	static String compruebaNumeros[] = {"0","1","2","3","4","5","6","7","8","9"}; //Validar como lenngth -1 , -2, -3 (el -1 es la ultima posicion).
 	static String compruebaRut[] = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "k"};
 	static String patente;
 	static int kilometraje;
