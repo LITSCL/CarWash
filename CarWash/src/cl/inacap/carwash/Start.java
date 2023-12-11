@@ -82,7 +82,6 @@ public class Start {
 					System.out.println("La patente es demasiado larga, ingresela nuevamente");
 				}
 			} while(patente.length() != 7);
-
 			
 			//Se valida que los primeros 4 caracteres sean letras.
 			for (int i = 0; i < 4; i++) {
@@ -221,7 +220,6 @@ public class Start {
 	}
 			
 	public static void registroDeCliente() {
-		
 		//Ingreso de del nombre del cliente y validación de datos.
 		do {
 			System.out.println("Ingrese el nombre del cliente");
@@ -280,7 +278,6 @@ public class Start {
 			
 			if (rut.length() == 10){
 				if ("-".equals(Character.toString(rut.charAt(8))) == true) { //Si el rut tiene 8 digitos, se comprueba que todos sean números mediante una excepción.
-					
 					try {
 						cadenaRut = rut.substring(0, 8); //En esta instrucción se almacenan los primeros 8 digitos.
 						rutInt = Integer.parseInt(cadenaRut); //En esta instrucción se convierten los números almacenados en la variable RutInt y se almacenan en una variable de tipo int (Si el programa no captura un error es porque todos los digitos eran números).
@@ -291,7 +288,6 @@ public class Start {
 								break;
 							}
 						}
-						
 					} catch (Exception ex) {
 						System.out.println("El rut ingresado no es valido, ingreselo nuevamente");
 						cadenaRut = "";
@@ -365,5 +361,4 @@ public class Start {
 	public static void main(String[] args) {
 		while (menu()); //Se repite el menu hasta que deje de ser true.
 	}
-
 }

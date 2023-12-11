@@ -42,5 +42,4 @@ public class Cliente {
 		String telefonoString = Integer.toString(telefono);
 		return "Nombre: " + this.nombre + " Apellido: " + this.apellido + " RUT: " + this.rut + " Telefono: " + telefonoString;
 	}
-	
 }
