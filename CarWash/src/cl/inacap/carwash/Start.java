@@ -8,7 +8,6 @@ import cl.inacap.carwashmodelo.dto.Cliente;
 import java.util.List;
 import java.util.Scanner;
 
-
 public class Start {
 	static ClienteDAO daoCliente = new ClienteDAO(); //Objeto de tipo ClienteDAO.
 	static AutomovilDAO daoAutomovil = new AutomovilDAO(); //Objeto de tipo AutomovilDAO.
@@ -93,14 +92,14 @@ public class Start {
 			}
 			
 			//Se valida el quinto caracter sea un guión.
-			if ("-".equals(Character.toString(patente.charAt(4)))){
+			if ("-".equals(Character.toString(patente.charAt(4)))) {
 				contador++;
 			}
 			
 			//Se validan que los dos ultimos indices del String sean numeros.
 			for (int i = 5; i < 7; i++) {
 				for (int j = 0; j < compruebaNumeros.length; j++) {
-					if (compruebaNumeros[j].equals(Character.toString(patente.charAt(i)))){
+					if (compruebaNumeros[j].equals(Character.toString(patente.charAt(i)))) {
 						contador++;
 					}
 				}
@@ -199,13 +198,12 @@ public class Start {
 				clienteSeleccionado = Integer.parseInt(sc.nextLine().trim());
 				
 				clienteRut = (clientes.get(clienteSeleccionado - 1)).getRut();
-				
 			}
 			catch (Exception ex) {
 				contador = 0;
 				clienteSeleccionado = -1;
 			}
-		}	
+		}
 			
 		//Creación del objeto.
 		Automovil automovil = new Automovil();
@@ -346,7 +344,6 @@ public class Start {
 	public static void mostrarClientes() {
 		
 		daoCliente.getAll().forEach(System.out::println); //Esta instrucción imprime la lista que almacena objetos de tipo Cliente.
-		
 	}
 		
 	public static void buscarAutomovil() {

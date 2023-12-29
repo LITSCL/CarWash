@@ -14,5 +14,4 @@ public class ClienteDAO {
 	public List<Cliente> getAll() {
 		return clientes;
 	}
-	
 }
