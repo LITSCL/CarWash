@@ -37,27 +37,27 @@ public class Start {
 		System.out.println("5. Buscar Automovil");
 		System.out.println("0. Salir");
 		switch (sc.nextLine().trim()) {
-		case "1":
-			registrarAutomovil();
-			break;
-		case "2":
-			registroDeCliente();
-			break;
-		case "3":
-			mostrarAutomoviles();
-			break;
-		case "4":
-			mostrarClientes();
-			break;
-		case "5":
-			buscarAutomovil();
-			break;
-		case "0":
-			continuar = false;
-			break;
-		default:
-			System.out.println("Opcion incorrecta");
-			break;
+			case "1":
+				registrarAutomovil();
+				break;
+			case "2":
+				registroDeCliente();
+				break;
+			case "3":
+				mostrarAutomoviles();
+				break;
+			case "4":
+				mostrarClientes();
+				break;
+			case "5":
+				buscarAutomovil();
+				break;
+			case "0":
+				continuar = false;
+				break;
+			default:
+				System.out.println("Opcion incorrecta");
+				break;
 		}
 		return continuar;
 	}
@@ -80,7 +80,7 @@ public class Start {
 				if (patente.length() > 7) {
 					System.out.println("La patente es demasiado larga, ingresela nuevamente");
 				}
-			} while(patente.length() != 7);
+			} while (patente.length() != 7);
 			
 			//Se valida que los primeros 4 caracteres sean letras.
 			for (int i = 0; i < 4; i++) {
@@ -153,25 +153,25 @@ public class Start {
 			System.out.println("3. Toyota");
 			System.out.println("4. Mercedes Benz");
 			switch (sc.nextLine().trim()) {
-			case "1":
-				marca = "Chevrolet";
-				salirMenuMarca = true;
-				break;
-			case "2":
-				marca = "Hyundai";
-				salirMenuMarca = true;
-				break;
-			case "3":
-				marca = "Toyota";
-				salirMenuMarca = true;
-				break;
-			case "4":
-				marca = "Mercedes Benz";
-				salirMenuMarca = true;
-				break;
-			default:
-				System.out.println("Usted Eligió una opción no valida, eliga nuevamente");
-				salirMenuMarca = false;
+				case "1":
+					marca = "Chevrolet";
+					salirMenuMarca = true;
+					break;
+				case "2":
+					marca = "Hyundai";
+					salirMenuMarca = true;
+					break;
+				case "3":
+					marca = "Toyota";
+					salirMenuMarca = true;
+					break;
+				case "4":
+					marca = "Mercedes Benz";
+					salirMenuMarca = true;
+					break;
+				default:
+					System.out.println("Usted Eligió una opción no valida, eliga nuevamente");
+					salirMenuMarca = false;
 			}
 		}
 		
@@ -235,7 +235,6 @@ public class Start {
 				System.out.println("El apellido debe contener como mínimo 10 caracteres, ingrese el apellido nuevamente");
 			}
 		} while (apellido.length() < 10);
-		
 		
 		//Ingreso de del rut del cliente y validación de datos.
 		boolean seguir = false;
@@ -334,7 +333,6 @@ public class Start {
 		Cliente.setTelefono(telefono);
 		
 		daoCliente.save(Cliente); //En esta instrucción se almacena el objeto anteriormente creado en la lista.
-		
 	}
 		
 	public static void mostrarAutomoviles() {
